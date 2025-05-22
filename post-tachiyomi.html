@@ -210,14 +210,14 @@
             align-items: center;
             justify-content: center;
             padding: 12px 24px;
-            background: linear-gradient(135deg, #f3bc2b, #f39c12); /* Gradient background */
-            color: #111319; /* Dark text for contrast */
+            background-color: #2d3748; /* Dark blue-gray background */
+            color: #f3bc2b; /* Yellow/Gold text color */
             font-size: 1rem;
             font-weight: 600;
             border-radius: 8px;
             text-decoration: none;
             transition: all 0.3s ease; /* Smooth transition */
-            border: none;
+            border: 1px solid #f3bc2b; /* Yellow border */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
         }
         
@@ -229,10 +229,21 @@
         .download-button:hover {
             transform: translateY(-3px); /* Lift effect on hover */
             box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            background-color: #3a4a61; /* Slightly lighter background on hover */
+            color: #f3d06a; /* Lighter yellow on hover */
+            border-color: #f3d06a; /* Lighter yellow border on hover */
         }
         
         .download-button.extensions {
-            background: linear-gradient(135deg, #00d4ff, #0088cc); /* Different gradient for extensions button */
+            background-color: #2d3748; /* Dark blue-gray background */
+            color: #00d4ff; /* Cyan/Light Blue text color */
+            border: 1px solid #00d4ff; /* Cyan border */
+        }
+
+        .download-button.extensions:hover {
+            background-color: #3a4a61; /* Slightly lighter background on hover */
+            color: #33eaff; /* Lighter cyan on hover */
+            border-color: #33eaff; /* Lighter cyan border on hover */
         }
         
         /* Back to Blog Link Style */
@@ -332,25 +343,6 @@
                 <div class="post-content">
                     <p>تطبيق Tachiyomi هو تطبيق مفتوح المصدر لقراءة المانجا على أجهزة Android. يتميز بواجهة سهلة الاستخدام وخيارات تخصيص متعددة، بالإضافة إلى دعم العديد من مصادر المانجا من خلال الإضافات.</p>
                     
-                    <h2>مميزات التطبيق</h2>
-                    <p>يوفر تطبيق Tachiyomi العديد من المميزات التي تجعله خياراً ممتازاً لقراءة المانجا:</p>
-                    <ul>
-                        <li>واجهة مستخدم بسيطة وسهلة الاستخدام</li>
-                        <li>تنزيل المانجا للقراءة دون اتصال بالإنترنت</li>
-                        <li>تتبع تقدم القراءة ومزامنته مع خدمات مثل MyAnimeList وAniList</li>
-                        <li>دعم القراءة من اليمين إلى اليسار، ومن اليسار إلى اليمين، ومن أعلى إلى أسفل</li>
-                        <li>خيارات تخصيص متعددة للقراءة والواجهة</li>
-                        <li>دعم الوضع الداكن والوضع الفاتح</li>
-                        <li>تنظيم المانجا في مكتبتك باستخدام الفئات</li>
-                        <li>البحث المتقدم والتصفية حسب النوع والحالة والمزيد</li>
-                    </ul>
-                    
-                    <h2>نظام الإضافات</h2>
-                    <p>يعتمد Tachiyomi على نظام الإضافات للوصول إلى مصادر المانجا المختلفة. يمكنك تثبيت الإضافات التي تحتاجها فقط، مما يجعل التطبيق خفيفاً وسريعاً. تتوفر إضافات لمصادر المانجا باللغات المختلفة، بما في ذلك العربية والإنجليزية واليابانية وغيرها.</p>
-                    
-                    <h3>كيفية استخدام التطبيق</h3>
-                    <p>بعد تثبيت التطبيق، ستحتاج إلى تثبيت الإضافات للمصادر التي ترغب في استخدامها. يمكنك بعد ذلك البحث عن المانجا وإضافتها إلى مكتبتك وتنظيمها في فئات. يمكنك أيضاً تنزيل الفصول للقراءة دون اتصال بالإنترنت.</p>
-                    
                     <div class="download-section">
                         <h3>تحميل التطبيق والإضافات</h3>
                         <p>يمكنك تحميل أحدث إصدار من تطبيق Tachiyomi وإضافة مستودع الإضافات باستخدام الروابط أدناه:</p>
@@ -364,9 +356,6 @@
                             </a>
                         </div>
                     </div>
-                    
-                    <h2>ملاحظات هامة</h2>
-                    <p>تطبيق Tachiyomi مخصص للاستخدام الشخصي فقط. يرجى دعم الناشرين والفنانين من خلال شراء المانجا الرسمية عندما تكون متاحة في منطقتك.</p>
                     
                     <a href="blog.html" class="back-link" aria-label="Back to Blog"><i class="fas fa-arrow-left" aria-hidden="true"></i> العودة إلى المدونة</a>
                 </div>
