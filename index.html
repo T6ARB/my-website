@@ -6,9 +6,6 @@
     <title>Isaac - Web Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <style>
-        /* Import Google Font - Cairo for Arabic */
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
-
         /* Global Reset and Box-sizing */
         *, *::before, *::after {
             margin: 0;
@@ -16,10 +13,9 @@
             box-sizing: border-box;
         }
 
-        /* Body Styles */
+        /* Body Styles - Reverted to original font */
         body {
-            /* Updated font-family to include Cairo for Arabic text */
-            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Arial', sans-serif;
             background-color: #040405; /* Dark background */
             color: #fff; /* White text */
             line-height: 1.6;
@@ -214,14 +210,18 @@
             flex-wrap: wrap;
             gap: 12px; /* Space between images */
             margin-top: 16px;
-            justify-content: center; /* Center images horizontally */
+            /* Clear float to ensure content flows correctly after floated image */
+            overflow: auto; 
         }
 
         /* Individual Language Image Style (now empty, but styles remain if needed later) */
         .language-images img {
-            max-width: 80px; /* Maximum width for images */
+            float: left; /* Float image to the left */
+            width: 40%; /* Make image smaller (adjust as needed) */
             height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure entire image is visible, no cropping */
             border-radius: 8px; /* Rounded corners */
+            margin: 0 20px 20px 0; /* Margin for spacing around the image */
             transition: transform 0.3s ease; /* Smooth scale on hover */
         }
 
@@ -266,7 +266,9 @@
                 padding: 6px 0;
             }
             .language-images img {
-                max-width: 60px; /* Even smaller images on very small screens */
+                float: none; /* Remove float on small screens */
+                width: 100%; /* Full width on small screens */
+                margin: 0 0 20px 0; /* Adjust margin for stacking */
             }
         }
     </style>
@@ -303,7 +305,7 @@
                 <h2>Languages</h2>
                 <p>I primarily work with TypeScript due to its robust type safety and advanced tooling, which contribute to a smoother and more reliable development process. I also leverage JavaScript for its flexibility, and Python for scripting, tooling, and rapid prototyping. Additionally, I possess strong CSS skills for crafting responsive designs and layouts.</p>
                 <div class="language-images">
-                </div>
+                    </div>
             </div>
         </section>
 
