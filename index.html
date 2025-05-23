@@ -3,9 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac - Aldehri</title>
+    <title>Isaac - Aldehri | Web & App Developer</title>
+    
+    <link rel="icon" href="https://placehold.co/32x32/00d4ff/000000?text=I" type="image/png">
+
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <meta property="og:title" content="Isaac - Aldehri | Web & App Developer">
+    <meta property="og:description" content="Web and Application Developer passionate about GNU/Linux and minimalist systems. Explore my skills, projects, and blog.">
+    <meta property="og:image" content="https://placehold.co/1200x630/040405/fff?text=Isaac+Aldehri+Portfolio">
+    <meta property="og:url" content="YOUR_WEBSITE_URL_HERE">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Isaac - Aldehri | Web & App Developer">
+    <meta name="twitter:description" content="Web and Application Developer passionate about GNU/Linux and minimalist systems. Explore my skills, projects, and blog.">
+    <meta name="twitter:image" content="https://placehold.co/1200x675/040405/fff?text=Isaac+Aldehri+Portfolio">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; img-src 'self' data: https://www.transparenttextures.com https://placehold.co; font-src 'self' https://cdnjs.cloudflare.com;">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Isaac Aldehri",
+      "url": "YOUR_WEBSITE_URL_HERE",
+      "sameAs": [
+        "https://github.com/T6ARB",
+        "https://t.me/aldehri"
+      ],
+      "jobTitle": "Web and Application Developer",
+      "alumniOf": "Your University/Institution (Optional)",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Your Company (Optional)"
+      }
+    }
+    </script>
+
     <style>
+        /* CSS Variables for easier maintenance and consistency */
+        :root {
+            --color-dark-bg: #040405;
+            --color-darker-bg: #111319;
+            --color-text-light: #fff;
+            --color-text-gray: #a0aec0;
+            --color-heading-light: #d3e3f3;
+            --color-accent-yellow: #f3bc2b;
+            --color-accent-cyan: #00d4ff;
+            --color-button-bg: #2d3748;
+            --color-button-hover: #3a4a61;
+            --border-radius-sm: 8px;
+            --border-radius-md: 16px;
+            --padding-container-v: 32px;
+            --padding-container-h: 16px;
+            --font-size-base: 0.9375rem;
+            --line-height-base: 1.6;
+        }
+
         /* Global Reset and Box-sizing */
         *, *::before, *::after {
             margin: 0;
@@ -13,12 +69,12 @@
             box-sizing: border-box;
         }
 
-        /* Body Styles - Reverted to original font */
+        /* Body Styles */
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Arial', sans-serif;
-            background-color: #040405; /* Dark background */
-            color: #fff; /* White text */
-            line-height: 1.6;
+            background-color: var(--color-dark-bg);
+            color: var(--color-text-light);
+            line-height: var(--line-height-base);
             overflow-x: hidden; /* Prevent horizontal scroll */
             direction: ltr; /* Left-to-right text direction */
             position: relative;
@@ -42,7 +98,7 @@
         .container {
             max-width: 700px;
             margin: 0 auto; /* Center the container */
-            padding: 32px 16px; /* Vertical and horizontal padding */
+            padding: var(--padding-container-v) var(--padding-container-h); /* Vertical and horizontal padding */
             position: relative;
             z-index: 1; /* Ensure content is above background */
         }
@@ -61,12 +117,12 @@
 
         /* Blog Link Button Style */
         .blog-link {
-            background-color: #2d3748; /* Dark blue-gray background */
-            color: #e2e8f0; /* Light text color */
+            background-color: var(--color-button-bg);
+            color: var(--color-text-light);
             font-size: 0.875rem;
             font-weight: 500;
             padding: 6px 12px;
-            border-radius: 16px; /* Rounded corners */
+            border-radius: var(--border-radius-md); /* Rounded corners */
             text-decoration: none; /* No underline */
             transition: all 0.3s ease; /* Smooth transition on hover */
             display: inline-flex; /* Allow icon and text to sit together */
@@ -78,8 +134,8 @@
         }
 
         .blog-link:hover {
-            background-color: #3a4a61; /* Slightly lighter on hover */
-            color: #00d4ff; /* Accent color on hover */
+            background-color: var(--color-button-hover); /* Slightly lighter on hover */
+            color: var(--color-accent-cyan); /* Accent color on hover */
         }
 
         /* Main Heading (H1) Styles */
@@ -92,7 +148,7 @@
         }
 
         h1 span {
-            color: #f3bc2b; /* Accent color for name */
+            color: var(--color-accent-yellow); /* Accent color for name */
         }
 
         /* Waving Emoji Style and Animation */
@@ -121,7 +177,7 @@
         .subtitle {
             font-size: 1.25rem;
             font-weight: 400;
-            color: #a0aec0; /* Lighter gray text */
+            color: var(--color-text-gray);
             line-height: 1.5;
             margin-bottom: 20px;
         }
@@ -143,28 +199,37 @@
         }
 
         .social-links a:hover {
-            color: #00d4ff; /* Accent color on hover */
+            color: var(--color-accent-cyan); /* Accent color on hover */
         }
 
         /* Section Padding */
         section {
             padding: 8px 0;
+            /* Fade-in animation for sections */
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         /* Section Heading (H2) Styles */
         h2 {
             font-size: 1.5rem;
             font-weight: 600;
-            color: #d3e3f3; /* Light blue-gray heading */
+            color: var(--color-heading-light);
             margin-bottom: 12px;
             line-height: 1.3;
         }
 
         /* General Paragraph Styles */
         p {
-            font-size: 0.9375rem;
+            font-size: var(--font-size-base);
             font-weight: 400;
-            color: #a0aec0; /* Lighter gray text */
+            color: var(--color-text-gray);
             text-align: left;
             line-height: 1.75;
             margin-bottom: 12px;
@@ -185,18 +250,18 @@
 
         /* Individual Skill Item Style */
         .skill-item {
-            background-color: #2d3748; /* Dark blue-gray background */
-            color: #e2e8f0; /* Light text color */
+            background-color: var(--color-button-bg);
+            color: var(--color-text-light);
             font-size: 0.875rem;
             font-weight: 500;
             padding: 6px 12px;
-            border-radius: 16px; /* Rounded corners */
+            border-radius: var(--border-radius-md); /* Rounded corners */
             display: inline-block;
         }
 
         /* Highlighted Links */
         .highlight {
-            color: #00d4ff; /* Accent color */
+            color: var(--color-accent-cyan);
             text-decoration: none;
         }
 
@@ -204,29 +269,36 @@
             text-decoration: underline; /* Underline on hover */
         }
 
-        /* Language Images Grid (now empty, but styles remain if needed later) */
-        .language-images {
+        /* Back-to-Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--color-button-bg);
+            color: var(--color-text-light);
+            padding: 10px 15px;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 1.2rem;
             display: flex;
-            flex-wrap: wrap;
-            gap: 12px; /* Space between images */
-            margin-top: 16px;
-            /* Clear float to ensure content flows correctly after floated image */
-            overflow: auto; 
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
         }
 
-        /* Individual Language Image Style (now empty, but styles remain if needed later) */
-        .language-images img {
-            float: left; /* Float image to the left */
-            width: 40%; /* Make image smaller (adjust as needed) */
-            height: auto; /* Maintain aspect ratio */
-            object-fit: contain; /* Ensure entire image is visible, no cropping */
-            border-radius: 8px; /* Rounded corners */
-            margin: 0 20px 20px 0; /* Margin for spacing around the image */
-            transition: transform 0.3s ease; /* Smooth scale on hover */
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
         }
 
-        .language-images a:hover img {
-            transform: scale(1.05); /* Slightly enlarge on hover */
+        .back-to-top:hover {
+            background-color: var(--color-button-hover);
+            color: var(--color-accent-cyan);
+            transform: translateY(-3px);
         }
 
         /* Responsive Adjustments for Smaller Screens */
@@ -265,11 +337,6 @@
             section {
                 padding: 6px 0;
             }
-            .language-images img {
-                float: none; /* Remove float on small screens */
-                width: 100%; /* Full width on small screens */
-                margin: 0 0 20px 0; /* Adjust margin for stacking */
-            }
         }
     </style>
 </head>
@@ -277,12 +344,12 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <div></div> 
-                <a href="blog.html" class="blog-link">
+                <div></div>
+                <a href="blog.html" class="blog-link" aria-label="Go to Blog Page">
                     <i class="fas fa-blog"></i> Blog
                 </a>
             </div>
-            <h1>Hi, I'm <span>Isaac</span><span class="waving-emoji">👋</span></h1>
+            <h1>Hi, I'm <span>Isaac</span><span class="waving-emoji" role="img" aria-label="Waving hand">👋</span></h1>
             <p class="subtitle">Web and Application Developer passionate about GNU/Linux and minimalist systems.</p>
             <div class="social-links">
                 <a href="https://github.com/T6ARB" target="_blank" aria-label="GitHub Profile"><i class="fab fa-github"></i></a>
@@ -304,8 +371,8 @@
             <div class="container">
                 <h2>Languages</h2>
                 <p>I primarily work with TypeScript due to its robust type safety and advanced tooling, which contribute to a smoother and more reliable development process. I also leverage JavaScript for its flexibility, and Python for scripting, tooling, and rapid prototyping. Additionally, I possess strong CSS skills for crafting responsive designs and layouts.</p>
-                <div class="language-images">
-                    </div>
+                <div class="language-icons">
+                </div>
             </div>
         </section>
 
@@ -330,13 +397,6 @@
             </div>
         </section>
 
-        <section id="blog">
-            <div class="container">
-                <h2>Blog</h2>
-                <p>Coming soon! Check back later for articles.</p>
-            </div>
-        </section>
-
         <section id="get-in-touch">
             <div class="container">
                 <h2>Get in Touch</h2>
@@ -344,5 +404,52 @@
             </div>
         </section>
     </main>
+
+    <a href="#" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // JavaScript for section fade-in animation on scroll
+        const sections = document.querySelectorAll('section');
+
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of the section must be visible
+        };
+
+        const sectionObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target); // Stop observing once visible
+                }
+            });
+        }, observerOptions);
+
+        sections.forEach(section => {
+            sectionObserver.observe(section);
+        });
+
+        // JavaScript for Back-to-Top button
+        const backToTopButton = document.querySelector('.back-to-top');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) { // Show button after scrolling 300px
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth' // Smooth scroll to top
+            });
+        });
+    </script>
 </body>
 </html>
