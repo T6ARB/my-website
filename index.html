@@ -1,156 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Isaac - Aldehri</title>
-    <!-- Tailwind CSS via CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#f3bc2b',
-                        secondary: '#00d4ff',
-                        dark: {
-                            DEFAULT: '#040405',
-                            lighter: '#111319',
-                            button: '#2d3748',
-                            'button-hover': '#3a4a61'
-                        },
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <!-- Custom styles -->
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="bg-dark text-white">
-    <header class="pt-12 pb-2 md:pt-16">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center mb-5">
-                <div></div>
-                <a href="blog.html" class="inline-flex items-center bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full transition-all hover:bg-dark-button-hover hover:text-secondary">
-                    <i class="fas fa-blog mr-1.5"></i> المدونة
-                </a>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-2">
-                مرحباً، أنا <span class="text-primary">Isaac</span>
-                <span class="waving-emoji text-3xl md:text-4xl mr-2">👋</span>
-            </h1>
-            <p class="text-xl md:text-2xl text-gray-400 leading-relaxed mb-5">
-                مطور ويب وتطبيقات شغوف بأنظمة GNU/Linux والأنظمة البسيطة.
-            </p>
-            <div class="flex items-center gap-3 mb-3">
-                <a 
-                    href="https://github.com/T6ARB" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-secondary transition-colors"
-                    aria-label="GitHub Profile"
-                >
-                    <i class="fab fa-github text-xl"></i>
-                </a>
-                <a 
-                    href="mailto:aldehri@outlook.com" 
-                    aria-label="Send an Email"
-                    class="text-gray-400 hover:text-secondary transition-colors"
-                >
-                    <i class="fas fa-envelope text-xl"></i>
-                </a>
-                <a 
-                    href="https://t.me/aldehri" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    class="text-gray-400 hover:text-secondary transition-colors"
-                    aria-label="Telegram Profile"
-                >
-                    <i class="fab fa-telegram text-xl"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section id="about" class="py-2">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-semibold text-blue-100 mb-3">نبذة عني</h2>
-                <p class="text-gray-400 leading-relaxed mb-3">
-                    أنا مطور ويب وتطبيقات. أنا شغوف بأنظمة GNU/Linux وأستخدم Arch Linux كنظام تشغيل يومي.
-                </p>
-            </div>
-        </section>
-
-        <section id="languages" class="py-2">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-semibold text-blue-100 mb-3">اللغات</h2>
-                <p class="text-gray-400 leading-relaxed mb-3">
-                    أعمل بشكل أساسي مع TypeScript بسبب أمان الأنواع القوي والأدوات المتقدمة، مما يساهم في عملية تطوير أكثر سلاسة وموثوقية. كما أستفيد من JavaScript لمرونتها، وPython للبرمجة النصية والأدوات والنماذج الأولية السريعة. بالإضافة إلى ذلك، أمتلك مهارات قوية في CSS لإنشاء تصميمات وتخطيطات متجاوبة.
-                </p>
-            </div>
-        </section>
-
-        <section id="skills" class="py-2">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-semibold text-blue-100 mb-3">المهارات</h2>
-                <div class="flex flex-wrap gap-2 mt-4">
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">JavaScript</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">TypeScript</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">Python</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">CSS</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">WebAssembly</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">Vite</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">React</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">Next.js</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">Tailwind</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">SQLite</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">PostgreSQL</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">Linux</span>
-                    <span class="bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full">Git</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog" class="py-2">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-semibold text-blue-100 mb-3">المدونة</h2>
-                <p class="text-gray-400 leading-relaxed mb-3">
-                    قريباً! تحقق لاحقاً للحصول على المقالات.
-                </p>
-            </div>
-        </section>
-
-        <section id="get-in-touch" class="py-2">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-semibold text-blue-100 mb-3 text-center">تواصل معي</h2>
-                <p class="text-gray-400 leading-relaxed mb-3 text-center">
-                    تريد الدردشة؟ فقط أرسل لي رسالة مباشرة مع سؤال مباشر على
-                    <a 
-                        href="https://t.me/Aldehri" 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
-                        class="text-secondary hover:underline"
-                    >
-                        Telegram
-                    </a>
-                    وسأرد عندما أستطيع.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="py-8">
-        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <p class="text-gray-400 text-sm">
-                    تم تطويره باستخدام HTML و Tailwind CSS
-                </p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
