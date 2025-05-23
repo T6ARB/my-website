@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac - Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Global Reset and Box-sizing */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles - Reverted to original font */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Arial', sans-serif;
+            background-color: #040405; /* Dark background */
+            color: #fff; /* White text */
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            direction: ltr; /* Left-to-right text direction */
+            position: relative;
+        }
+
+        /* Background Noise Effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+            opacity: 0.05; /* Subtle opacity */
+            z-index: -1; /* Behind content */
+            pointer-events: none; /* Allow interaction with content below */
+        }
+
+        /* Container for Centering Content */
+        .container {
+            max-width: 700px;
+            margin: 0 auto; /* Center the container */
+            padding: 32px 16px; /* Vertical and horizontal padding */
+            position: relative;
+            z-index: 1; /* Ensure content is above background */
+        }
+
+        /* Header Section Styles */
+        header {
+            padding: 48px 0 8px 0; /* Top, right, bottom, left padding */
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Vertically align items */
+            margin-bottom: 20px;
+        }
+
+        /* Home Link Button Style */
+        .home-link {
+            background-color: #2d3748; /* Dark blue-gray background */
+            color: #e2e8f0; /* Light text color */
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 16px; /* Rounded corners */
+            text-decoration: none; /* No underline */
+            transition: all 0.3s ease; /* Smooth transition on hover */
+            display: inline-flex; /* Allow icon and text to sit together */
+            align-items: center;
+        }
+
+        .home-link i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+
+        .home-link:hover {
+            background-color: #3a4a61; /* Slightly lighter on hover */
+            color: #00d4ff; /* Accent color on hover */
+        }
+
+        /* Main Heading (H1) Styles */
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: #f3bc2b; /* Accent color for "Blog" */
+        }
+
+        /* Icon next to Blog title */
+        .icon {
+            font-size: 1.75rem;
+            display: inline-block;
+            margin-left: 8px;
+            color: #b5b7b6; /* Gray icon color */
+            vertical-align: middle;
+        }
+
+        /* Subtitle Paragraph Style */
+        .subtitle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #a0aec0; /* Lighter gray text */
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        /* Section Padding */
+        section {
+            padding: 8px 0;
+        }
+
+        /* Section Heading (H2) Styles */
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #d3e3f3; /* Light blue-gray heading */
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        /* General Paragraph Styles */
+        p {
+            font-size: 0.9375rem;
+            font-weight: 400;
+            color: #a0aec0; /* Lighter gray text */
+            text-align: left;
+            line-height: 1.75;
+            margin-bottom: 12px;
+        }
+
+        /* Highlighted Links */
+        .highlight {
+            color: #00d4ff; /* Accent color */
+            text-decoration: none;
+        }
+
+        .highlight:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+        
+        /* Blog specific styles */
+        .blog-posts {
+            margin-top: 24px;
+        }
+        
+        .blog-post {
+            background-color: #111319; /* Darker background for posts */
+            border-radius: 8px; /* Rounded corners */
+            padding: 20px;
+            margin-bottom: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+            transition: all 0.3s ease; /* Smooth transition on hover */
+        }
+        
+        .blog-post:hover {
+            transform: translateY(-5px); /* Lift effect on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+            border-color: rgba(243, 188, 43, 0.3); /* Accent border on hover */
+        }
+        
+        .blog-post-header {
+            display: flex;
+            justify-content: space-between; /* Space between title and date */
+            align-items: flex-start; /* Align items to the top */
+            margin-bottom: 12px;
+        }
+        
+        .blog-post-date {
+            font-size: 0.8125rem;
+            color: #a0aec0; /* Lighter gray for date */
+        }
+        
+        .blog-post-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f3bc2b; /* Accent color for post titles */
+            margin-bottom: 8px;
+        }
+        
+        .blog-post-excerpt {
+            font-size: 0.9375rem;
+            color: #a0aec0; /* Lighter gray for excerpt */
+            margin-bottom: 16px;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 6px 12px;
+            background-color: #2d3748; /* Dark blue-gray background */
+            color: #e2e8f0; /* Light text color */
+            font-size: 0.875rem;
+            font-weight: 500;
+            border-radius: 16px; /* Rounded corners */
+            text-decoration: none; /* No underline */
+            transition: all 0.3s ease; /* Smooth transition on hover */
+        }
+        
+        .read-more:hover {
+            background-color: #3a4a61;
+            color: #00d4ff;
+        }
+        
+        /* Responsive Adjustments for Smaller Screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+            .icon {
+                font-size: 1.5rem;
+                color: #b5b7b6;
+            }
+            .subtitle {
+                font-size: 1.1rem;
+            }
+            h2 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 0.875rem;
+            }
+            .home-link {
+                font-size: 0.8125rem;
+                padding: 5px 10px;
+            }
+            .container {
+                padding: 24px 12px;
+            }
+            header {
+                padding: 32px 0 6px 0;
+            }
+            section {
+                padding: 6px 0;
+            }
+            .blog-post-title {
+                font-size: 1.125rem;
+            }
+            .blog-post-excerpt {
+                font-size: 0.875rem;
+            }
+            .read-more {
+                font-size: 0.8125rem;
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="home-link" aria-label="Go to Home Page">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <div></div> 
+            </div>
+            <h1>Isaac's <span>Blog</span><i class="fas fa-blog icon"></i></h1>
+            <p class="subtitle">Thoughts, tutorials, and insights about web development, Linux, and programming.</p>
+        </div>
+    </header>
+
+    <main>
+        <section id="blog-content">
+            <div class="container">
+                <div class="blog-posts">
+                    <article class="blog-post">
+                        <header class="blog-post-header">
+                            <h2 class="blog-post-title">Tachiyomi</h2>
+                            <time datetime="2025-05-21" class="blog-post-date">May 21, 2025</time>
+                        </header>
+                        <p class="blog-post-excerpt">تطبيق Tachiyomi هو تطبيق مفتوح المصدر لقراءة المانجا على أجهزة Android. يتميز بواجهة سهلة الاستخدام وخيارات تخصيص متعددة، بالإضافة إلى دعم العديد من مصادر المانجا من خلال الإضافات...</p>
+                        <a href="post-tachiyomi.html" class="read-more" aria-label="Read more about Tachiyomi">قراءة المزيد</a>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <header class="blog-post-header">
+                            <h2 class="blog-post-title">Getting Started with TypeScript</h2>
+                            <time datetime="2025-05-15" class="blog-post-date">May 15, 2025</time>
+                        </header>
+                        <p class="blog-post-excerpt">TypeScript offers powerful type safety and tooling that makes development smoother and more reliable. In this guide, I'll walk you through setting up your first TypeScript project and explain the key benefits over plain JavaScript...</p>
+                        <a href="#" class="read-more" aria-label="Read more about TypeScript">Read More</a>
+                    </article>
+                    
+                    <article class="blog-post">
+                        <header class="blog-post-header">
+                            <h2 class="blog-post-title">My Arch Linux Setup for Developers</h2>
+                            <time datetime="2025-05-02" class="blog-post-date">May 2, 2025</time>
+                        </header>
+                        <p class="blog-post-excerpt">Arch Linux provides a minimal base system that you can build upon according to your needs. In this post, I share my complete development environment setup, including window manager, terminal, editor, and productivity tools...</p>
+                        <a href="#" class="read-more" aria-label="Read more about Arch Linux Setup">Read More</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

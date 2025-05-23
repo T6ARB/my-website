@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tachiyomi - Isaac's Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Global Reset and Box-sizing */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Arial', sans-serif;
+            background-color: #040405; /* Dark background */
+            color: #fff; /* White text */
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            direction: ltr; /* Left-to-right text direction */
+            position: relative;
+        }
+
+        /* Background Noise Effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+            opacity: 0.05; /* Subtle opacity */
+            z-index: -1; /* Behind content */
+            pointer-events: none; /* Allow interaction with content below */
+        }
+
+        /* Container for Centering Content */
+        .container {
+            max-width: 700px;
+            margin: 0 auto; /* Center the container */
+            padding: 32px 16px; /* Vertical and horizontal padding */
+            position: relative;
+            z-index: 1; /* Ensure content is above background */
+        }
+
+        /* Header Section Styles */
+        header {
+            padding: 48px 0 8px 0; /* Top, right, bottom, left padding */
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between; /* Space between items */
+            align-items: center; /* Vertically align items */
+            margin-bottom: 20px;
+        }
+
+        /* Navigation Links Style */
+        .nav-link {
+            background-color: #2d3748; /* Dark blue-gray background */
+            color: #e2e8f0; /* Light text color */
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 16px; /* Rounded corners */
+            text-decoration: none; /* No underline */
+            transition: all 0.3s ease; /* Smooth transition on hover */
+            display: inline-flex; /* Allow icon and text to sit together */
+            align-items: center;
+            margin-right: 8px; /* Space between nav links */
+        }
+
+        .nav-link i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+
+        .nav-link:hover {
+            background-color: #3a4a61; /* Slightly lighter on hover */
+            color: #00d4ff; /* Accent color on hover */
+        }
+
+        /* Main Heading (H1) Styles */
+        h1 {
+            font-size: 2.25rem;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+
+        h1 span {
+            color: #f3bc2b; /* Accent color for "Tachiyomi" */
+        }
+
+        /* Post Meta (Date and Author) Styles */
+        .post-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 24px;
+            color: #a0aec0; /* Lighter gray text */
+            font-size: 0.9375rem;
+        }
+
+        .post-meta .date {
+            margin-right: 16px; /* Space between date and author */
+        }
+
+        .post-meta .author {
+            display: flex;
+            align-items: center;
+        }
+
+        .post-meta .author i {
+            margin-right: 5px; /* Space between icon and author name */
+        }
+
+        /* Section Padding */
+        section {
+            padding: 8px 0;
+        }
+
+        /* General Paragraph Styles */
+        p {
+            font-size: 0.9375rem;
+            font-weight: 400;
+            color: #a0aec0; /* Lighter gray text */
+            text-align: left;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+        
+        /* Post specific styles */
+        .post-content {
+            margin-top: 32px;
+            /* Clear float to ensure content flows correctly after floated image */
+            overflow: auto; 
+        }
+        
+        /* Image positioning and sizing */
+        .post-image {
+            float: left; /* Float image to the left */
+            width: 40%; /* Make image smaller */
+            height: auto; /* Maintain aspect ratio */
+            object-fit: contain; /* Ensure entire image is visible, no cropping */
+            border-radius: 8px; /* Rounded corners */
+            margin: 0 20px 20px 0; /* Margin for spacing around the image */
+        }
+        
+        /* Download Buttons container */
+        .download-buttons {
+            display: flex;
+            flex-wrap: wrap; /* Allow buttons to wrap */
+            gap: 16px; /* Space between buttons */
+            margin-top: 16px; /* Add margin to separate from content above */
+            margin-bottom: 32px; /* Add margin to separate from content below */
+        }
+        
+        .download-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            background-color: #2d3748; /* Dark blue-gray background */
+            color: #f3bc2b; /* Yellow/Gold text color */
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.3s ease; /* Smooth transition */
+            border: 1px solid #f3bc2b; /* Yellow border */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        }
+        
+        .download-button i {
+            margin-right: 8px;
+            font-size: 1.25rem;
+        }
+        
+        .download-button:hover {
+            transform: translateY(-3px); /* Lift effect on hover */
+            box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            background-color: #3a4a61; /* Slightly lighter background on hover */
+            color: #f3d06a; /* Lighter yellow on hover */
+            border-color: #f3d06a; /* Lighter yellow border on hover */
+        }
+        
+        .download-button.extensions {
+            background-color: #2d3748; /* Dark blue-gray background */
+            color: #00d4ff; /* Cyan/Light Blue text color */
+            border: 1px solid #00d4ff; /* Cyan border */
+        }
+
+        .download-button.extensions:hover {
+            background-color: #3a4a61; /* Slightly lighter background on hover */
+            color: #33eaff; /* Lighter cyan on hover */
+            border-color: #33eaff; /* Lighter cyan border on hover */
+        }
+        
+        /* Back to Blog Link Style */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            margin-top: 32px;
+            color: #a0aec0; /* Lighter gray text */
+            text-decoration: none;
+            transition: color 0.3s ease; /* Smooth color change on hover */
+        }
+        
+        .back-link i {
+            margin-right: 5px; /* Space between icon and text */
+        }
+        
+        .back-link:hover {
+            color: #00d4ff; /* Accent color on hover */
+        }
+        
+        /* Responsive Adjustments for Smaller Screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.75rem;
+            }
+            /* Removed .icon as it's not used in HTML */
+            /* Removed h2, h3, p font sizes as they are general */
+            .nav-link {
+                font-size: 0.8125rem;
+                padding: 5px 10px;
+            }
+            .container {
+                padding: 24px 12px;
+            }
+            header {
+                padding: 32px 0 6px 0;
+            }
+            .post-image {
+                float: none; /* Remove float on small screens */
+                width: 100%; /* Full width on small screens */
+                margin: 0 0 20px 0; /* Adjust margin for stacking */
+            }
+            .download-buttons {
+                flex-direction: column; /* Stack buttons vertically */
+                gap: 12px;
+            }
+            .download-button {
+                width: 100%; /* Full width buttons */
+                padding: 10px 20px;
+                font-size: 0.9375rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <a href="index.html" class="nav-link" aria-label="Go to Home Page"><i class="fas fa-home"></i> Home</a>
+                    <a href="blog.html" class="nav-link" aria-label="Go to Blog Page"><i class="fas fa-blog"></i> Blog</a>
+                </div>
+                <div></div> </div>
+            <h1><span>Tachiyomi</span></h1>
+            <div class="post-meta">
+                <div class="date" role="contentinfo"><i class="far fa-calendar-alt" aria-hidden="true"></i> May 21, 2025</div>
+                <div class="author" role="contentinfo"><i class="far fa-user" aria-hidden="true"></i> Isaac</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="post-content">
+            <div class="container">
+                <img src="images/tachiyomi-screens.png" alt="Tachiyomi Screenshots" class="post-image" loading="lazy">
+                
+                <div class="post-content">
+                    <p>تطبيق Tachiyomi هو تطبيق مفتوح المصدر لقراءة المانجا على أجهزة Android. يتميز بواجهة سهلة الاستخدام وخيارات تخصيص متعددة، بالإضافة إلى دعم العديد من مصادر المانجا من خلال الإضافات.</p>
+                    
+                    <div class="download-buttons">
+                        <a href="https://github.com/ZhanZiyuan/tachiyomi/releases/download/v0.15.3/tachiyomi-v0.15.3.apk" class="download-button" aria-label="Download Tachiyomi application">
+                            <i class="fas fa-download" aria-hidden="true"></i> تحميل التطبيق
+                        </a>
+                        <a href="tachiyomi://add-repo?url=https%3A%2F%2Fraw.githubusercontent.com%2Fkeiyoushi%2Fextensions%2Frepo%2Findex.min.json" class="download-button extensions" aria-label="Add Tachiyomi extensions repository">
+                            <i class="fas fa-puzzle-piece" aria-hidden="true"></i> إضافة الإضافات
+                        </a>
+                    </div>
+                    
+                    <a href="blog.html" class="back-link" aria-label="Back to Blog"><i class="fas fa-arrow-left" aria-hidden="true"></i> العودة إلى المدونة</a>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
