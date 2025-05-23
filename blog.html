@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isaac - المدونة</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#f3bc2b',
+                        secondary: '#00d4ff',
+                        dark: {
+                            DEFAULT: '#040405',
+                            lighter: '#111319',
+                            button: '#2d3748',
+                            'button-hover': '#3a4a61'
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-dark text-white">
+    <header class="pt-12 pb-2 md:pt-16">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-5">
+                <a href="index.html" class="inline-flex items-center bg-dark-button text-gray-200 text-sm font-medium py-1.5 px-3 rounded-full transition-all hover:bg-dark-button-hover hover:text-secondary">
+                    <i class="fas fa-home ml-1.5"></i> الرئيسية
+                </a>
+                <div></div>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-2">
+                مدونة <span class="text-primary">Isaac</span>
+                <i class="fas fa-blog text-gray-400 text-3xl md:text-4xl mr-2"></i>
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-400 leading-relaxed mb-5">
+                أفكار، دروس، ورؤى حول تطوير الويب، لينكس، والبرمجة.
+            </p>
+        </div>
+    </header>
+
+    <main>
+        <section id="blog-content" class="py-2">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mt-6">
+                    <article class="blog-post bg-dark-lighter rounded-lg p-5 mb-6 border border-white/10">
+                        <header class="flex justify-between items-start mb-3">
+                            <h2 class="text-xl font-semibold text-primary mb-2">Tachiyomi</h2>
+                            <time datetime="2025-05-21" class="text-sm text-gray-400">May 21, 2025</time>
+                        </header>
+                        <p class="text-gray-400 mb-4 text-right">تطبيق Tachiyomi هو تطبيق مفتوح المصدر لقراءة المانجا على أجهزة Android. يتميز بواجهة سهلة الاستخدام وخيارات تخصيص متعددة، بالإضافة إلى دعم العديد من مصادر المانجا من خلال الإضافات...</p>
+                        <a href="post-tachiyomi.html" class="inline-block py-1.5 px-3 bg-dark-button text-gray-200 text-sm font-medium rounded-full transition-all hover:bg-dark-button-hover hover:text-secondary">
+                            قراءة المزيد
+                        </a>
+                    </article>
+                    
+                    <article class="blog-post bg-dark-lighter rounded-lg p-5 mb-6 border border-white/10">
+                        <header class="flex justify-between items-start mb-3">
+                            <h2 class="text-xl font-semibold text-primary mb-2">Getting Started with TypeScript</h2>
+                            <time datetime="2025-05-15" class="text-sm text-gray-400">May 15, 2025</time>
+                        </header>
+                        <p class="text-gray-400 mb-4 text-left">TypeScript offers powerful type safety and tooling that makes development smoother and more reliable. In this guide, I'll walk you through setting up your first TypeScript project and explain the key benefits over plain JavaScript...</p>
+                        <a href="#" class="inline-block py-1.5 px-3 bg-dark-button text-gray-200 text-sm font-medium rounded-full transition-all hover:bg-dark-button-hover hover:text-secondary">
+                            Read More
+                        </a>
+                    </article>
+                    
+                    <article class="blog-post bg-dark-lighter rounded-lg p-5 mb-6 border border-white/10">
+                        <header class="flex justify-between items-start mb-3">
+                            <h2 class="text-xl font-semibold text-primary mb-2">My Arch Linux Setup for Developers</h2>
+                            <time datetime="2025-05-02" class="text-sm text-gray-400">May 2, 2025</time>
+                        </header>
+                        <p class="text-gray-400 mb-4 text-left">Arch Linux provides a minimal base system that you can build upon according to your needs. In this post, I share my complete development environment setup, including window manager, terminal, editor, and productivity tools...</p>
+                        <a href="#" class="inline-block py-1.5 px-3 bg-dark-button text-gray-200 text-sm font-medium rounded-full transition-all hover:bg-dark-button-hover hover:text-secondary">
+                            Read More
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center">
+                <p class="text-gray-400 text-sm">
+                    تم تطويره باستخدام HTML و Tailwind CSS
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
