@@ -1,0 +1,54 @@
+/* Custom styles that complement Tailwind CSS */
+
+/* Background Noise Effect */
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://www.transparenttextures.com/patterns/noise.png");
+    opacity: 0.05;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Waving Animation */
+@keyframes wave {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(18deg); }
+    20% { transform: rotate(-10deg); }
+    30% { transform: rotate(18deg); }
+    40% { transform: rotate(-6deg); }
+    50% { transform: rotate(14deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.waving-emoji {
+    display: inline-block;
+    animation: wave 2.5s infinite;
+    transform-origin: 70% 70%;
+}
+
+/* Blog post hover effect */
+.blog-post {
+    transition: all 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: rgba(243, 188, 43, 0.3);
+}
+
+/* Download button hover effect */
+.download-button {
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 7px 14px rgba(0, 0, 0, 0.2);
+}
